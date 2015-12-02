@@ -1,6 +1,6 @@
 {
   "name": "sort-object-keys",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sort an object's keys, including an optional key list",
   "main": "index.js",
   "scripts": {
