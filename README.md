@@ -1,5 +1,7 @@
 Sort Object
 
+[![Build Status](https://travis-ci.org/keithamus/sort-object-keys.svg)](https://travis-ci.org/keithamus/sort-object-keys)
+
 Returns a copy of an object with all keys sorted.
 
 You can pass an array of keys, which it will use for ordering - to provide custom sorts.
