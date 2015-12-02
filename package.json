@@ -4,7 +4,7 @@
   "description": "Sort an object's keys, including an optional key list",
   "main": "index.js",
   "scripts": {
-    "test": "test.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
