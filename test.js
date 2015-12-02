@@ -1,5 +1,5 @@
 const assert = require('assert');
-const sortObject = require('.');
+const sortObject = require('./');
 
 assert.equal(JSON.stringify(sortObject({
   c: 1,
