@@ -2,7 +2,7 @@ Sort Object
 
 Returns a copy of an object with all keys sorted.
 
-You can pass an array of keys, which it will use for ordering - to provide custom sorts.
+The second argument is optional and is used for ordering - to provide custom sorts. You can either pass an array containing ordered keys or a function to sort the keys (same signature as in [`Array.prototype.sort()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)).
 
 ```js
 const assert = require('assert');
@@ -30,5 +30,23 @@ assert.equal(JSON.stringify(sortObject({
   a: 1,
   d: 1,
   c: 1,
+}));
+
+function removeKeyAncCompareIndex(keyA, keyB){
+  var a = parseInt(keyA.slice(4));
+  var b = parseInt(keyB.slice(4));
+  return a - b;
+}
+
+assert.equal(JSON.stringify(sortObject({
+  "key-1": 1,
+  "key-3": 1,
+  "key-10": 1,
+  "key-2": 1,
+}, removeKeyAncCompareIndex)), JSON.stringify({
+  "key-1": 1,
+  "key-2": 1,
+  "key-3": 1,
+  "key-10": 1,
 }));
 ```

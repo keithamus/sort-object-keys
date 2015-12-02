@@ -24,3 +24,21 @@ assert.equal(JSON.stringify(sortObject({
   d: 1,
   c: 1,
 }));
+
+function removeKeyAncCompareIndex(keyA, keyB){
+  var a = parseInt(keyA.slice(4));
+  var b = parseInt(keyB.slice(4));
+  return a - b;
+}
+
+assert.equal(JSON.stringify(sortObject({
+  "key-1": 1,
+  "key-3": 1,
+  "key-10": 1,
+  "key-2": 1,
+}, removeKeyAncCompareIndex)), JSON.stringify({
+  "key-1": 1,
+  "key-2": 1,
+  "key-3": 1,
+  "key-10": 1,
+}));
