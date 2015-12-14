@@ -1,4 +1,4 @@
-Sort Object
+# Sort Object
 
 [![Build Status](https://travis-ci.org/keithamus/sort-object-keys.svg)](https://travis-ci.org/keithamus/sort-object-keys)
 
