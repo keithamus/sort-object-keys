@@ -7,8 +7,12 @@ module.exports = function sortObjectByKeyNameList(object, sortWith) {
   } else {
     keys = sortWith;
   }
-  return (keys || []).concat(Object.keys(object).sort(sortFn)).reduce(function(total, key) {
-    total[key] = object[key];
+
+  var objectKeys = Object.keys(object);
+  return (keys || []).concat(objectKeys.sort(sortFn)).reduce(function(total, key) {
+    if (objectKeys.indexOf(key) !== -1) {
+      total[key] = object[key];
+    }
     return total;
   }, Object.create(null));
 }
