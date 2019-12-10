@@ -1,6 +1,6 @@
 {
   "name": "sort-object-keys",
-  "version": "0.0.0-development",
+  "version": "1.1.3",
   "description": "Sort an object's keys, including an optional key list",
   "keywords": [
     "keys",
