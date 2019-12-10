@@ -42,3 +42,11 @@ assert.equal(JSON.stringify(sortObject({
   "key-3": 1,
   "key-10": 1,
 }));
+
+assert.deepStrictEqual(Object.keys(sortObject({
+  b: 1,
+  a: 1,
+}, ['a', 'b', 'c', 'd'])), [
+  'a',
+  'b'
+])
