@@ -4,8 +4,8 @@ cache:
   directories:
     - node_modules
 node_js:
-  - '0.12'
-  - v4
+  - '12'
+  - '10'
   - stable
 after_success:
   - npm run semantic-release

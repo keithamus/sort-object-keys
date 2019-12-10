@@ -1,14 +1,11 @@
-module.exports = function sortObjectByKeyNameList(object, sortWith) {
-  var keys;
-  var sortFn;
+module.exports = function sortObjectByKeyNameList(object, sortWith = []) {
+  let keys = Object.keys(object)
 
   if (typeof sortWith === 'function') {
-    sortFn = sortWith;
+    keys = keys.sort(sortWith)
   } else {
-    keys = sortWith;
+    keys = sortWith.concat(keys.sort())
   }
-  return (keys || []).concat(Object.keys(object).sort(sortFn)).reduce(function(total, key) {
-    total[key] = object[key];
-    return total;
-  }, Object.create(null));
+
+  return Object.fromEntries(keys.map(key => [key, object[key]]))
 }
