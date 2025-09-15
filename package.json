@@ -35,7 +35,7 @@
   "scripts": {
     "prepare": "husky",
     "semantic-release": "travis-after-all && semantic-release pre && npm publish && semantic-release post",
-    "sort": "npx sort-package-json",
+    "sort": "sort-package-json",
     "test": "node test.js"
   },
   "devDependencies": {
