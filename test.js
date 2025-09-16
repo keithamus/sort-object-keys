@@ -1,5 +1,5 @@
-const assert = require('assert');
-const sortObject = require('./');
+import assert from 'node:assert';
+import sortObject from './index.js';
 
 assert.equal(JSON.stringify(sortObject({
   c: 1,
