@@ -33,16 +33,10 @@
     "index.d.ts"
   ],
   "scripts": {
-    "prepare": "husky",
-    "semantic-release": "travis-after-all && semantic-release pre && npm publish && semantic-release post",
     "sort": "sort-package-json",
     "test": "node test.js"
   },
   "devDependencies": {
-    "husky": "^9.1.7",
-    "semantic-release": "^4.3.5",
-    "sort-package-json": "^3.4.0",
-    "travis-after-all": "^1.4.4",
-    "validate-commit-msg": "^2.4.1"
+    "sort-package-json": "^3.4.0"
   }
 }
