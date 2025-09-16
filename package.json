@@ -33,10 +33,12 @@
     "index.d.ts"
   ],
   "scripts": {
+    "prepare": "husky",
     "sort": "sort-package-json",
     "test": "node test.js"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "sort-package-json": "^3.4.0"
   }
 }
