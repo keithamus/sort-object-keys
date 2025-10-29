@@ -1,7 +1,7 @@
 const has = (object, key) => Object.prototype.hasOwnProperty.call(object, key);
 
 export default function sortObjectByKeyNameList(object, sortWith) {
-  let keys, sortFn;
+  let keys, sortFn, key;
 
   if (typeof sortWith === 'function') {
     sortFn = sortWith;
@@ -9,11 +9,14 @@ export default function sortObjectByKeyNameList(object, sortWith) {
     keys = sortWith;
   }
 
-  const objectKeys = Object.keys(object);
-  return [...(keys ?? []), ...objectKeys.sort(sortFn)].reduce((total, key) => {
+  const total = {};
+  const objectKeys = [...(keys ?? []), ...Object.keys(object).sort(sortFn)];
+
+  for (key of objectKeys) {
     if (has(object, key)) {
       total[key] = object[key];
     }
-    return total;
-  }, Object.create(null));
+  }
+
+  return total;
 }
