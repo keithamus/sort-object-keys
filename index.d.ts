@@ -10,6 +10,6 @@
 declare function sortObjectByKeyNameList<T>(
   object: T,
   sortWith?: ReadonlyArray<keyof T> | ((a: keyof T, b: keyof T) => number),
-): T;
+): T
 
-export default sortObjectByKeyNameList;
+export default sortObjectByKeyNameList
