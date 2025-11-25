@@ -1,1 +1,1 @@
-npm t
+npm run sort && npm run format && npm run test
