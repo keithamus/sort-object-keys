@@ -17,4 +17,9 @@ jobs:
           node-version: 25
           registry-url: https://registry.npmjs.org/
           cache: npm
-      - run: npm it
+      - name: Install
+      - run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm run test
