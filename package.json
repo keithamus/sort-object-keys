@@ -34,7 +34,7 @@
     "format": "prettier -w .",
     "prepare": "husky",
     "sort": "sort-package-json",
-    "test": "node test.js"
+    "test": "node --test"
   },
   "prettier": {
     "semi": false,
