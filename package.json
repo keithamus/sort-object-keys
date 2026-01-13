@@ -33,7 +33,6 @@
   "scripts": {
     "format": "prettier -w .",
     "lint": "prettier -c .",
-    "prepare": "husky",
     "sort": "sort-package-json",
     "test": "node --test"
   },
@@ -42,7 +41,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "husky": "^9.1.7",
     "prettier": "^3.6.2",
     "sort-package-json": "^3.4.0"
   }
