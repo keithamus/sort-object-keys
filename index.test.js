@@ -1,16 +1,18 @@
 import { test } from 'node:test'
 import sortObject from './index.js'
 
-const { keys } = Object;
+const { keys } = Object
 
 test('sort keys by default', ({ assert }) => {
   assert.deepEqual(
-    keys(sortObject({
-      c: 1,
-      b: 1,
-      d: 1,
-      a: 1,
-    })),
+    keys(
+      sortObject({
+        c: 1,
+        b: 1,
+        d: 1,
+        a: 1,
+      }),
+    ),
     keys({
       a: 1,
       b: 1,
@@ -22,15 +24,17 @@ test('sort keys by default', ({ assert }) => {
 
 test('using an array of ordered keys', ({ assert }) => {
   assert.deepEqual(
-    keys(sortObject(
-      {
-        c: 1,
-        b: 1,
-        d: 1,
-        a: 1,
-      },
-      ['b', 'a', 'd', 'c'],
-    )),
+    keys(
+      sortObject(
+        {
+          c: 1,
+          b: 1,
+          d: 1,
+          a: 1,
+        },
+        ['b', 'a', 'd', 'c'],
+      ),
+    ),
     keys({
       b: 1,
       a: 1,
@@ -48,15 +52,17 @@ test('using comparator function', ({ assert }) => {
   }
 
   assert.deepEqual(
-    keys(sortObject(
-      {
-        'key-1': 1,
-        'key-3': 1,
-        'key-10': 1,
-        'key-2': 1,
-      },
-      comparator,
-    )),
+    keys(
+      sortObject(
+        {
+          'key-1': 1,
+          'key-3': 1,
+          'key-10': 1,
+          'key-2': 1,
+        },
+        comparator,
+      ),
+    ),
     keys({
       'key-1': 1,
       'key-2': 1,
