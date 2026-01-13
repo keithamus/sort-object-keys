@@ -1,26 +1,28 @@
 import { test } from 'node:test'
 import sortObject from './index.js'
 
+const { keys } = Object;
+
 test('sort keys by default', ({ assert }) => {
   assert.deepEqual(
-    sortObject({
+    keys(sortObject({
       c: 1,
       b: 1,
       d: 1,
       a: 1,
+    })),
+    keys({
+      a: 1,
+      b: 1,
+      c: 1,
+      d: 1,
     }),
-    {
-      a: 1,
-      b: 1,
-      c: 1,
-      d: 1,
-    },
   )
 })
 
 test('using an array of ordered keys', ({ assert }) => {
   assert.deepEqual(
-    sortObject(
+    keys(sortObject(
       {
         c: 1,
         b: 1,
@@ -28,13 +30,13 @@ test('using an array of ordered keys', ({ assert }) => {
         a: 1,
       },
       ['b', 'a', 'd', 'c'],
-    ),
-    {
+    )),
+    keys({
       b: 1,
       a: 1,
       d: 1,
       c: 1,
-    },
+    }),
   )
 })
 
@@ -46,7 +48,7 @@ test('using comparator function', ({ assert }) => {
   }
 
   assert.deepEqual(
-    sortObject(
+    keys(sortObject(
       {
         'key-1': 1,
         'key-3': 1,
@@ -54,20 +56,19 @@ test('using comparator function', ({ assert }) => {
         'key-2': 1,
       },
       comparator,
-    ),
-
-    {
+    )),
+    keys({
       'key-1': 1,
       'key-2': 1,
       'key-3': 1,
       'key-10': 1,
-    },
+    }),
   )
 })
 
 test('using array with some not-contained keys', ({ assert }) => {
   assert.deepEqual(
-    Object.keys(
+    keys(
       sortObject(
         {
           b: 1,
