@@ -1,6 +1,6 @@
-# Sort Object
+# Sort Object Keys
 
-[![Build Status](https://travis-ci.org/keithamus/sort-object-keys.svg)](https://travis-ci.org/keithamus/sort-object-keys)
+![Test](https://github.com/keithamus/sort-object-keys/actions/workflows/test.yml/badge.svg)
 
 Returns a copy of an object with all keys sorted.
 
@@ -45,12 +45,6 @@ assert.equal(
   }),
 )
 
-function removeKeyAncCompareIndex(keyA, keyB) {
-  var a = parseInt(keyA.slice(4))
-  var b = parseInt(keyB.slice(4))
-  return a - b
-}
-
 assert.equal(
   JSON.stringify(
     sortObject(
@@ -60,7 +54,7 @@ assert.equal(
         'key-10': 1,
         'key-2': 1,
       },
-      removeKeyAncCompareIndex,
+      (a, b) => parseInt(a.slice(4)) - parseInt(b.slice(4)),
     ),
   ),
   JSON.stringify({
