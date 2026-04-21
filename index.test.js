@@ -45,12 +45,6 @@ test('using an array of ordered keys', ({ assert }) => {
 })
 
 test('using comparator function', ({ assert }) => {
-  function comparator(keyA, keyB) {
-    const a = parseInt(keyA.slice(4))
-    const b = parseInt(keyB.slice(4))
-    return a - b
-  }
-
   assert.deepEqual(
     keys(
       sortObject(
@@ -60,7 +54,7 @@ test('using comparator function', ({ assert }) => {
           'key-10': 1,
           'key-2': 1,
         },
-        comparator,
+        (a, b) => parseInt(a.slice(4)) - parseInt(b.slice(4)),
       ),
     ),
     keys({
