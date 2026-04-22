@@ -11,7 +11,7 @@ export default function sortObjectByKeyNameList(object, sortWith) {
   const objectKeys = [...(keys ?? []), ...Object.keys(object).sort(sortFn)]
 
   for (const key of objectKeys) {
-    if (Object.prototype.hasOwnProperty.call(object, key)) {
+    if (Object.hasOwn(object, key)) {
       total[key] = object[key]
     }
   }
